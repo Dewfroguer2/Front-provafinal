@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Avaliações</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/auth0-config.js"></script>
+  <script src="https://cdn.auth0.com/js/auth0-spa-js/2.1/auth0-spa-js.production.js"></script>
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <main class="container">
+    <header class="topbar">
+      <div><span class="eyebrow">SISTEMA</span><h1>Avaliações</h1></div>
+      <button id="login-button" class="button secondary">Entrar com Auth0</button>
+      <button id="logout-button" class="button secondary hidden">Sair</button>
+    </header>
+    <p id="status" class="status" role="status">Conectando…</p>
+    <section id="app-content" class="hidden">
+      <section id="create-section" class="card hidden">
+        <h2>Nova avaliação</h2>
+        <form id="review-form">
+          <label>E-mail de quem foi avaliado<input name="emailAvaliado" type="email" required></label>
+          <label>Nota (0 a 10)<input name="prioridade" type="number" min="0" max="10" required></label>
+          <label class="wide">Comentário<textarea name="descrição" maxlength="2000" rows="3" required></textarea></label>
+          <button class="button primary" type="submit">Cadastrar avaliação</button>
+        </form>
+      </section>
+      <section class="list-section"><h2>Avaliações cadastradas</h2><div id="reviews" class="reviews"></div></section>
+    </section>
+  </main>
+</body>
+</html>
